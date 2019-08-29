@@ -13,9 +13,12 @@ import service.Book_Service;
 public class Book_Service_Impl implements Book_Service{
 @Autowired
 Book_Dao dao;
-	public List<Book> select() {
-		// TODO Auto-generated method stub
-		return dao.select();
-	}
+
+public List<Book> select(String txt) {
+	// TODO Auto-generated method stub
+	return dao.select(txt);
+}
+
+
 
 }

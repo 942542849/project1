@@ -12,8 +12,8 @@ import model.Book;
 
 @Repository
 public interface Book_Dao {
-	@Select("select * from book ${txt}")
-	public List<Book> select();
+
+	public List<Book> select(String txt );
 
 
 }

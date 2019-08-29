@@ -1,6 +1,10 @@
 package model;
 
 public class Book {
+	public static String[]sexs= {"不限","男","女"};
+	public String getSexname() {
+		return sexs[sex];
+	}
 	private int id;
 	private String name;
 	private int sex;
