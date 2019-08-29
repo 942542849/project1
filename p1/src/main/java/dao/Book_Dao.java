@@ -12,8 +12,8 @@ import model.Book;
 
 @Repository
 public interface Book_Dao {
-
-	public List<Book> select(String txt );
+	@Select("select book.*,Type.name Typename from book inner join type on book.typeid=type.id ${txt}")
+	public List<Book> select(@Param("txt") String txt );
 
 
 }
