@@ -18,7 +18,10 @@ function del(id){
 <form action="index">
 <input name="txt"><input type="submit" value="查询">
 </form>
+<form action="index">
 <a href="add">新增</a>
+</form>
+
 <table>
 <tr><td>编号</td><td>名称</td><td>操作</td></tr>
 <c:forEach items="${list}" var="r">
