@@ -11,7 +11,7 @@
 <script type="text/javascript">
 function del(id){
 	if(confirm("是否删除?")){
-		open("delete.action?id="+id,"_self");
+		open("delete?id="+id,"_self");
 	}
 }
 </script>
