@@ -26,7 +26,7 @@ public interface Book_Dao {
 	
 	public void update(Book t);
 	
-	public void delect(int id);
+	public void delete(int id);
 
 
 }

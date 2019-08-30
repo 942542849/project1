@@ -10,7 +10,7 @@
 	select * from book where book.id=#{id}
  </select>
  <insert id="insert" parameterType="model.Book">
-	insert into book(name) values(#{name}
+	insert into book(name) values(#{name})
  </insert> 
  <update id="update" parameterType="model.Book">
 	update book set name=#{name} where book.id=#{id}

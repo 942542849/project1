@@ -30,7 +30,7 @@ public void update(Book t) {
 }
 
 public void delete(int id) {
-	dao.delect(id);
+	dao.delete(id);
 	
 }
 
