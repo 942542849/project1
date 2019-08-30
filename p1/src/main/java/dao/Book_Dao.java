@@ -15,19 +15,17 @@ import model.Book;
 
 @Repository
 public interface Book_Dao {
-	@Select("select* from book ${txt}")
-	public List<Book> select(@Param("txt") String txt );
+
+	public List<Book> select(String txt );
 	
-	@Select("select * from book where book.id=#{id}")
+
 	public Book selectById(int id);
 	
-	@Insert("insert into book(name) values(#{name})")
+
 	public void insert(Book t);
 	
-	@Update("update book set name=#{name} where book.id=#{id}")
 	public void update(Book t);
 	
-	@Delete("delete from book where id=#{id}")
 	public void delect(int id);
 
 
