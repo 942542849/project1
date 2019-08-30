@@ -21,10 +21,10 @@ public interface Book_Dao {
 	@Select("select * from book where book.id=#{id}")
 	public Book selectById(int id);
 	
-	@Insert("insert into book(name,sex) values(#{name},#{sex})")
+	@Insert("insert into book(name) values(#{name})")
 	public void insert(Book t);
 	
-	@Update("update book set name=#{name},sex=#{sex} where book.id=#{id}")
+	@Update("update book set name=#{name} where book.id=#{id}")
 	public void update(Book t);
 	
 	@Delete("delete from book where id=#{id}")

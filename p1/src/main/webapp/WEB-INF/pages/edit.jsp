@@ -11,11 +11,6 @@
 <c:if test="${info==null}">
 <form action="insert" method="post">
 <input name="name" value="">
-<select name="sex">
-<c:forEach items="${sexs}" var="r" varStatus="v">
-<option value="${v.index}">${r}</option>
-</c:forEach>
-</select>
 <input type="submit">
 </form>
 </c:if>
@@ -23,16 +18,6 @@
 <form action="update" method="post">
 <input name="id" type="hidden" value="${info.id}">
 <input name="name" value="${info.name}">
-<select name="sex">
-<c:forEach items="${sexs}" var="r" varStatus="v">
- <c:if test="${info.sex!=v.index}" >
-<option value="${v.index}">${r}</option>
-</c:if> 
- <c:if test="${info.sex==v.index}" >
-<option value="${v.index}"selected="selected">${r}</option>
-</c:if> 
-</c:forEach>
-</select>
 <input type="submit">
 </form>
 </c:if>

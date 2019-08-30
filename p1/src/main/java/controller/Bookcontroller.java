@@ -27,7 +27,6 @@ public class Bookcontroller {
 		
 		@RequestMapping("add")
 		public String add(ModelMap m) {
-			m.put("sexs", Book.sexs);
 			return"edit";
 		}
 
