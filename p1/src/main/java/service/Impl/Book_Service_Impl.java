@@ -15,8 +15,28 @@ public class Book_Service_Impl implements Book_Service{
 Book_Dao dao;
 
 public List<Book> select(String txt) {
-	// TODO Auto-generated method stub
+
 	return dao.select(txt);
+}
+
+public void insert(Book t) {
+	dao.insert(t);
+	
+}
+
+public void update(Book t) {
+	dao.update(t);
+	
+}
+
+public void delete(int id) {
+	dao.delect(id);
+	
+}
+
+public Book selectById(int id) {
+	// TODO Auto-generated method stub
+	return dao.selectById(id);
 }
 
 

@@ -8,7 +8,6 @@ public class Book {
 	private int id;
 	private String name;
 	private int sex;
-	private int typeid;
 	public int getId() {
 		return id;
 	}
@@ -27,11 +26,16 @@ public class Book {
 	public void setSex(int sex) {
 		this.sex = sex;
 	}
-	public int getTypeid() {
-		return typeid;
+
+
+	public Book() {
+		// TODO Auto-generated constructor stub
 	}
-	public void setTypeid(int typeid) {
-		this.typeid = typeid;
+	
+	
+	public Book(String name) {
+		super();
+		this.name = name;
 	}
 	
 	
