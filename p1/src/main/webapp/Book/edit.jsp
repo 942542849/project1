@@ -1,56 +1,77 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html >
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<link href="/ssm_layui/layui/css/layui.css" rel="stylesheet">
+<script type="text/javascript" src="/ssm_layui/layui/layui.all.js"></script>
+<script src="/ssm_layui/js/jquery-2.2.4.min.js" ></script>
+<script type="text/javascript" src="/ssm_layui/js/my.js"></script>
+
 <title></title>
 </head>
 <body>
-<c:if test="${info==null}">
-<form action="insert.action" method="post">
-<input name="name" value="">
-<select name="sex">
-<c:forEach items="${sexs}" var="r" varStatus="v">
-<option value="${v.index}">${r}</option>
-</c:forEach>
-</select>
-<select name="typeid">
-<c:forEach items="${typelist}" var="r">
-<option value="${r.id}">${r.name}</option>
-</c:forEach>
-</select>
-<input type="submit">
+<style>
+.layui-input{width:200px;}
+</style>
+<form class="layui-form" lay-filter="myform">
+<input type="hidden" name="id" >
+  <div class="layui-form-item">
+    <label class="layui-form-label">名称</label>
+    <div class="layui-input-block">
+      <input type="text" name="name"  autocomplete="off" placeholder="请输入标题" class="layui-input">
+    </div>
+  </div>
+   <div class="layui-form-item">
+    <label class="layui-form-label">性别</label>
+    <div class="layui-input-block">
+      <select name="sex" >
+      </select>
+    </div>
+  </div>
+   <div class="layui-form-item">
+    <label class="layui-form-label">类型</label>
+    <div class="layui-input-block">
+      <select name="typeid" >
+      </select>
+    </div>
+  </div>
+  
+   <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit="" lay-filter="demo1">保存</button>
+    </div>
+  </div>
 </form>
-</c:if>
-<c:if test="${info!=null}">
-<form action="update.action" method="post">
-<input name="id" type="hidden" value="${info.id}">
-<input name="name" value="${info.name}">
-<select name="sex">
-<c:forEach items="${sexs}" var="r" varStatus="v">
- <c:if test="${info.sex!=v.index}" >
-<option value="${v.index}">${r}</option>
-</c:if> 
- <c:if test="${info.sex==v.index}" >
-<option value="${v.index}"selected="selected">${r}</option>
-</c:if> 
-</c:forEach>
-</select>
-<select name="typeid">
-<c:forEach items="${typelist}" var="r">
-<c:if test="${info.typeid!=r.id}" >
-<option value="${r.id}">${r.name}</option>
-</c:if>
-<c:if test="${info.typeid==r.id}" >
-<option value="${r.id}" selected="selected">${r.name}</option>
-</c:if>
-</c:forEach>
-</select>
-<input type="submit">
-</form>
-</c:if>
 
+<script type="text/javascript">
+var id="${param.id}";
+
+$.post("edit.action",{id:id}, function(json) {
+	render('myform', json);
+	getarray("getSexs.action",{},"[name=sex]",json.sex);
+	getlist("getTypes.action",{},"[name=typeid]",json.typeid);
+},"json");
+layui.use(['form',], function(){
+	  var form = layui.form;
+	  form.on('submit(demo1)', function(data){
+		 $.post("update.action", data.field, function(json) {
+			  closeFrame();
+			  parent.fresh('demo');
+			}, "json");
+		    
+		    return false;
+		  });
+});
+
+
+
+
+	
+
+
+</script>
 </body>
 </html>
