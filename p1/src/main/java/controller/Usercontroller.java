@@ -37,7 +37,7 @@ public class Usercontroller {
 	
 	
 	@RequestMapping("outlogin")
-	public String login(HttpSession s,HttpServletRequest req) {
+	public String login(HttpSession s) {
 		s.removeAttribute("user");
 		return "redirect:/login.html";
 	}

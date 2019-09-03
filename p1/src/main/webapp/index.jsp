@@ -7,7 +7,6 @@
 <title></title>
 </head>
 <body>
-<a href="User/outlogin">注销</a>
 <style>
 .left{
 	width: 15%;
@@ -31,7 +30,7 @@ function ok(o) {
 
 </script>
 
-
+<a href="outlogin">注销</a>
 <div class="left">
 <a href="../Book/index" target="right">book</a>
 <a href="../Type/index" target="right">type</a>
