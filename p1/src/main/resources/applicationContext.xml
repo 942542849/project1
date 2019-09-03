@@ -33,13 +33,13 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     
-    <mvc:interceptors>
+<!--拦截器     <mvc:interceptors>
     <mvc:interceptor>
     	<mvc:mapping path="/**"/>
     	<bean class="interceptor.LoginInterceptor"/>
     
     </mvc:interceptor>
-    </mvc:interceptors>
+    </mvc:interceptors> -->
     
 <!-- 扫描实现类的包 -->
     <context:component-scan base-package="controller"></context:component-scan>

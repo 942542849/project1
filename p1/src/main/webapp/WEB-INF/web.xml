@@ -45,6 +45,7 @@
     <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+<!--  会话时间 <session-config></session-config> -->
   
   <welcome-file-list>
   <welcome-file>/login.thml</welcome-file>
