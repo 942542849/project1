@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/ssm_layui/layui/css/layui.css" rel="stylesheet">
-<script type="text/javascript" src="/ssm_layui/layui/layui.all.js"></script>
-<script src="/ssm_layui/js/jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="/ssm_layui/js/my.js"></script>
+<link href="../layui/css/layui.css" rel="stylesheet">
+<script type="text/javascript" src="../layui/layui.all.js"></script>
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="../layui/layui.all.js"></script>
 <title></title>
 <style type="text/css">
 .input {
