@@ -1,4 +1,4 @@
-package controller;
+  package controller;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -38,8 +38,8 @@ public class UserRealm extends AuthorizingRealm
         roles.add("admin");
         //roles.add("role1");
         Set<String> permissions = new  HashSet<String>();
-        permissions.add("add");
-        permissions.add("delete");
+        permissions.add("admin:add");
+        permissions.add("admin:delete");
         sainfo.setRoles(roles);
          sainfo.setStringPermissions(permissions);
         return sainfo;
