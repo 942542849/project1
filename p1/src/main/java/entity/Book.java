@@ -1,8 +1,10 @@
-package model;
+package entity;
+
 
 import java.io.Serializable;
 
 public class Book implements Serializable{
+	//״̬�У������ݱ���״̬��ʶ�����룩
 	private Integer sex;
 	public static String[] sexs= {"未知","男","女"};
 	public String getSexname() {
@@ -10,7 +12,7 @@ public class Book implements Serializable{
 	}
 	
 	
-
+	//����У������ݱ����������������չ������
 	private Integer typeid;
 	private String typename;
 	public String getTypename() {

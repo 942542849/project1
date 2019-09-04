@@ -1,28 +1,25 @@
 package controller;
 
-
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import model.Book;
-
-import service.Book_Service;
-
-import service.Type_Service;
+import entity.Book;
+import service.BookService;
+import service.TypeService;
 
 @Controller
 @RequestMapping("Book")
-public class Bookcontroller extends Basiccontroller<Book> {
+public class BookController extends BasicController<Book> {
 	@Autowired
-	Book_Service service;
+	BookService service;
 	
 	@Autowired
-	Type_Service tservice;
+	TypeService tservice;
 //	
 //	
 //	

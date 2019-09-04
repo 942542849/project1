@@ -1,16 +1,22 @@
-package serviceImpl;
+package service.Impl;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import service.BasicService;
+import dao.BookDao;
+import entity.Book;
+import entity.Type;
+import service.BookService;
+import service.basicService;
 
 @Service
-public class Basic_Service_Imple<T> implements BasicService<T>{
+public class BasicServiceImpl<T> implements basicService<T>{
 
 
 private Object execDao(String mname,Object... objs){
@@ -19,7 +25,7 @@ private Object execDao(String mname,Object... objs){
 	f.setAccessible(true);
 	Object dao=f.get(this);
 		
-	Class cls=dao.getClass();  
+	Class cls=dao.getClass();  //  daoµÄ×Ö½ÚÂë
 	Class[] cs=new Class[objs.length];
 	for(int i=0;i<objs.length;i++)cs[i]=objs[i].getClass();
 	Method m= cls.getMethod(mname, cs);

@@ -1,31 +1,36 @@
 package controller;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import service.BasicService;
-import serviceImpl.Basic_Service_Imple;
-
-
+import entity.Type;
+import service.TypeService;
+import service.basicService;
+import service.Impl.BasicServiceImpl;
 
 @Controller
-public class Basiccontroller<T>  {
+public class BasicController<T>  {
 	
-	Basic_Service_Imple<T> basicservice;
+	BasicServiceImpl<T> basicservice;
 	
 	@ModelAttribute
 	public void init() throws Exception{
 		Field f=this.getClass().getDeclaredField("service");
 		f.setAccessible(true);
 		Object dao=f.get(this);
-		basicservice=(Basic_Service_Imple<T>) dao;
+		basicservice=(BasicServiceImpl<T>) dao;
 	}
 	
 	private String getTname() {
@@ -33,9 +38,9 @@ public class Basiccontroller<T>  {
 	}
 	
 	public Class getRealType(){
-
+		// 获取当前new的对象的泛型的父类类型
 		ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
-
+		// 获取第一个类型参数的真实类型
 		return (Class<T>) pt.getActualTypeArguments()[0];
 	}
 	

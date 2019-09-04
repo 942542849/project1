@@ -3,17 +3,16 @@ package controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import model.Type;
-
-import service.Type_Service;
-import serviceImpl.Type_Service_Impl;
+import entity.Type;
+import service.TypeService;
 
 @Controller
 @RequestMapping("Type")
-public class Typecontroller extends Basiccontroller<Type> {
+public class TypeController extends BasicController<Type> {
 	@Autowired
-	Type_Service service;
+	TypeService service;
 	
 }
